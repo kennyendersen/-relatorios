@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Portfólio de Dashboards</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      scroll-behavior: smooth;
+      overflow-x: hidden; /* Evita barra de rolagem horizontal com o zoom */
+    }
+    
+    /* Ocultamos o header global para ganhar 100% do espaço vertical da tela */
+    header {
+      display: none; 
+    }
+
+    .dashboard-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      width: 100%;
+      margin: 0;
+    }
+
+    .card {
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      height: 100vh; /* O card continua ocupando 100% da altura da janela */
+      border-bottom: 2px solid #ddd;
+    }
+
+    .card h2 {
+      font-size: 1.2rem;
+      padding: 10px 15px;
+      margin: 0;
+      color: #2c3e50;
+      flex-shrink: 0;
+      background-color: #ffffff; /* Fundo branco para não misturar com o gráfico */
+      z-index: 10; /* Mantém o título sempre acima do gráfico */
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .iframe-wrapper {
+      position: relative;
+      width: 100%;
+      flex-grow: 1;
+      border: none;
+      overflow: hidden; /* Corta as bordas que passarem devido ao zoom */
+    }
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%; 
+      height: 100%;
+      border: 0;
+      
+      /* --- O SEGREDO PARA AUMENTAR OS GRÁFICOS --- */
+      /* Ajuste esse valor para aumentar ou diminuir. 1.0 é o padrão. */
+      zoom: 1.15; 
+      
+      /* Alternativa caso o zoom falhe em algum navegador específico: */
+      /* transform: scale(1.15); */
+      /* transform-origin: top center; */
+      /* width: 87%; /* Necessário compensar a largura se usar transform: scale */
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Dashboards</h1>
+    <p></p>
+  </header>
+
+  <div class="dashboard-container">
+    
+    <!-- Dashboard 1 -->
+    <div class="card">
+      <h2>Análise de Vendas & Desempenho</h2>
+      <div class="iframe-wrapper">
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkeWTxm0d4MNzVt9Ax_LkiiyJ2zIihvNk2XHxRgjOWg2DlVjleceOUdnpbzUOu7Gkye0wnWsCUG9tT/pubhtml?gid=999111&amp;single=true&amp;widget=true&amp;headers=false" allowfullscreen="true"></iframe>
+      </div>
+    </div>
+
+    <!-- Dashboard 2 -->
+    <div class="card">
+      <h2>Indicadores Financeiros</h2>
+      <div class="iframe-wrapper">
+        <!-- Cole o código <iframe> do seu dashboard abaixo -->
+        <iframe src="LINK_DO_SEU_DASHBOARD_AQUI" allowfullscreen="true"></iframe>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
